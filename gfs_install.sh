@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#Add gluster GPG key to apt
+#install gnupg and Add gluster GPG key to apt
+apt -y install gnupg
 wget -O - https://download.gluster.org/pub/gluster/glusterfs/10/rsa.pub | apt-key add -
 
 #Set variables to be used in source URL
