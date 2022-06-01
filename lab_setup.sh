@@ -17,10 +17,10 @@ fi
 
 
 #Copy key to other systems.
-for i in {2..4}
+for i in {1..4}
 do
 sshpass -f /root/cloud_pass ssh-copy-id -i /home/cloud_user/.ssh/id_rsa.pub -o "StrictHostKeyChecking no" cloud_user@server-${i}
-scp -i /home/cloud_user/.ssh/id_rsa /home/cloud_user/.ssh/id_rsa cloud_user@server-${i}:/home/cloud_user/.ssh/id_rsa
+scp -o "StrictHostKeyChecking no" -i /home/cloud_user/.ssh/id_rsa /home/cloud_user/.ssh/id_rsa cloud_user@server-${i}:/home/cloud_user/.ssh/id_rsa
 done
 
 if [ "$HOSTNAME" = server-1 ]; then
