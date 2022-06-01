@@ -16,7 +16,8 @@ echo "nothing to do"
 fi
 
 
-#Copy key to other systems.
+#Sleep to allow instances to fully startup then copy key to other systems.
+sleep 60
 for i in {1..4}
 do
 sshpass -f /root/cloud_pass ssh-copy-id -i /home/cloud_user/.ssh/id_rsa.pub -o "StrictHostKeyChecking no" cloud_user@server-${i}
