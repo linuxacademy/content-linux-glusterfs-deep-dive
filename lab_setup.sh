@@ -20,4 +20,11 @@ sshpass -f /root/cloud_pass ssh-copy-id -i /home/cloud_user/.ssh/id_rsa.pub -o "
 scp /home/cloud_user/.ssh/id_rsa cloud_user@server-${i}:/home/cloud_user/.ssh/id_rsa
 done
 
+if [ "$HOSTNAME" = server-1 ]; then
+gluster peer probe server-2
+gluster peer probe server-3
+gluster peer probe server-4
+else
+echo "nothing to do"
+fi
 
