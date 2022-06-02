@@ -17,6 +17,7 @@ apt update
 apt install -y glusterfs-server
 
 #get updated /etc/glusterfs/glusterd.vol which changes port begining range
+mv /etc/glusterfs/glusterd.vol /etc/glusterfs/glusterd.vol.bkp
 /usr/bin/wget https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/glusterd.vol -P /etc/glusterfs/
 
 #enable and start the glusterd service
