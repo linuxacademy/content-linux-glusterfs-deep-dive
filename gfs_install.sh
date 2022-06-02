@@ -16,5 +16,8 @@ echo deb https://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/${DEBI
 apt update
 apt install -y glusterfs-server
 
+#get updated /etc/glusterfs/glusterd.vol which changes port begining range
+/usr/bin/wget https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/glusterd.vol -P /etc/glusterfs/
+
 #enable and start the glusterd service
 systemctl enable --now  glusterd
