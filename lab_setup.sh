@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #Add /etc/hosts entries
-echo "10.0.2.100 server-1
-10.0.2.101 server-2
-10.0.2.102 server-3
-10.0.2.103 server-4" >> /etc/hosts
+echo "10.0.2.101 server-1
+10.0.2.102 server-2
+10.0.2.103 server-3
+10.0.2.104 server-4" >> /etc/hosts
 
 #Add cloud_user ssh keys for passwordless ssh
 if [ "$HOSTNAME" = server-1 ]; then
