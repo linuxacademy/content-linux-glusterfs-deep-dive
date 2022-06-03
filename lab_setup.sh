@@ -18,7 +18,7 @@ else
 echo "nothing to do"
 fi
 
-/usr/bin/wget https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/iptables.sh 
-chmod +X /root/iptables.sh
+/usr/bin/wget https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/iptables.sh -P /root/
+chmod +x /root/iptables.sh
 /root/iptables.sh
 sleep 10
