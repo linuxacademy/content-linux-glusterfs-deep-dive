@@ -14,4 +14,3 @@ else
 echo "nothing to do"
 fi
 
-/usr/bin/wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/iptables.sh | bash
