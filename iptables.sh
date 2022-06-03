@@ -27,3 +27,6 @@ iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
 #Default discard traffic
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
+
+#script done file
+touch /tmp/iptables_done
