@@ -6,6 +6,14 @@ echo "10.0.2.101 server-1
 10.0.2.103 server-3
 10.0.2.104 server-4" >> /etc/hosts
 
+#Check for iptables file and add glusterfs port 24007
+if [ -f /tmp/iptables_done ]; then
+ iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 24007 -j ACCEPT
+ iptables -A OUTPUT -p tcp -m state --state NEW -m tcp --dport 24007 -j ACCEPT
+else
+echo no iptables
+fi
+
 #restart glusterd due to some intermittent issues on lab starting.
 systemctl --no-pager --no-block restart glusterd
 sleep 5
