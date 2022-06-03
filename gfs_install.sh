@@ -22,3 +22,5 @@ mv /etc/glusterfs/glusterd.vol /etc/glusterfs/glusterd.vol.bkp
 
 #enable and start the glusterd service
 systemctl enable --now  glusterd
+
+touch /tmp/gfs_install_done
