@@ -3,7 +3,7 @@
 #Add /etc/hosts entries
 echo "10.0.2.101 server-1
 10.0.2.102 server-2
-10.0.2.104 server-3" >> /etc/hosts
+10.0.2.103 server-3" >> /etc/hosts
 
 #Check for iptables file and add glusterfs port 24007
 if [ -f /tmp/iptables_done ]; then
@@ -15,12 +15,22 @@ fi
 
 #restart glusterd due to some intermittent issues on lab starting.
 systemctl --no-pager --no-block restart glusterd
-sleep 10 
+sleep 10
 
 if [ "$HOSTNAME" = server-1 ]; then
-sleep 45 
-gluster peer probe server-2
-gluster peer probe server-3
+sleep 15
+        for server in server-2 server-3
+        do
+                echo "Adding ${server}"
+                gluster peer probe ${server}
+                probe_status=1
+                until [ "${probe_status}" -eq 0 ]; do
+                        echo "probing server ${server}"
+                        gluster peer probe ${server}
+                        probe_status=$?
+                        sleep 5
+                done
+        done
 else
 echo "nothing to do"
 fi
