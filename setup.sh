@@ -15,7 +15,7 @@ do
 			sleep 3
 	 	done
 	elif [ "$OPT" == "ipt" ]; then
-	 wget -qO https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/iptables.sh | bash
+	 wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/iptables.sh | bash
                 until [ -f /tmp/iptables_done ];
                         do
                         sleep 3
