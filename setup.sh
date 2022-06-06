@@ -20,8 +20,14 @@ do
                         do
                         sleep 3
                 done
-	elif [ "$OPT" == "pool" ]; then
-	 wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/lab_setup.sh | bash 
+	elif [ "$OPT" == "pool3" ]; then
+	 wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/lab_setup_3_node.sh | bash 
+                until [ -f /tmp/lab_setup_done ];
+                        do
+                        sleep 3
+                done
+        elif [ "$OPT" == "pool4" ]; then
+         wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/lab_setup_4_node.sh | bash
                 until [ -f /tmp/lab_setup_done ];
                         do
                         sleep 3
