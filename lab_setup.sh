@@ -16,9 +16,10 @@ fi
 
 #restart glusterd due to some intermittent issues on lab starting.
 systemctl --no-pager --no-block restart glusterd
-sleep 30 
+sleep 10 
 
 if [ "$HOSTNAME" = server-1 ]; then
+sleep 45 
 gluster peer probe server-2
 gluster peer probe server-3
 gluster peer probe server-4
