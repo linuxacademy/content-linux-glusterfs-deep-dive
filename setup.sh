@@ -32,6 +32,12 @@ do
                         do
                         sleep 3
                 done
+        elif [ "$OPT" == "pool6" ]; then
+         wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/lab_setup_6_node.sh | bash
+                until [ -f /tmp/lab_setup_done ];
+                        do
+                        sleep 3
+                done
 	else echo bad 
 	fi
 done
