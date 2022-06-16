@@ -16,15 +16,13 @@ ssh -o KbdInteractiveAuthentication=no -o BatchMode=yes setup@10.0.2.10${host} 2
 sleep 6
 let attempt=attempt+1
 done
-sshpass -f /root/cloud_pass ssh-copy-id -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa root@10.0.2.10${host}
-sshpass -f /root/cloud_pass ssh-copy-id -o StrictHostKeyChecking=no -i /home/cloud_user/.ssh/id_rsa cloud_user@10.0.2.10${host}
+sshpass -f /root/cloud_pass ssh-copy-id -f -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa root@10.0.2.10${host}
+sshpass -f /root/cloud_pass ssh-copy-id -f -o StrictHostKeyChecking=no -i /home/cloud_user/.ssh/id_rsa cloud_user@10.0.2.10${host}
 scp /root/.ssh/id_rsa* 10.0.2.10${host}:/root/.ssh/
 scp /home/cloud_user/.ssh/id_rsa* 10.0.2.10${host}:/home/cloud_user/.ssh/
+ssh 10.0.2.10${host} 'chown cloud_user:cloud_user /home/cloud_user/.ssh/id_rsa*'
 done
 
-#add key locally
-#cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 else
 echo "nothing to do"
 fi
-
