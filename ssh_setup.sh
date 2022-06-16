@@ -3,7 +3,7 @@
 #enable root login with pass and key authentication
 /usr/bin/sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 /usr/bin/sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
-/usr/bin/sed -i 's/#StrictHostKeyChecking ask/StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+/usr/bin/sed -i 's/#   StrictHostKeyChecking ask/StrictHostKeyChecking no/g' /etc/ssh/ssh_config
 systemctl restart ssh
 
 if [ "$HOSTNAME" = server-1 ]; then
