@@ -38,6 +38,12 @@ do
                         do
                         sleep 3
                 done
+        elif [ "$OPT" == "ssh" ]; then
+         wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/ssh_setup.sh | bash
+                until [ -f /tmp/ssh_setup_done ];
+                        do
+                        sleep 3
+                done
 	else echo bad 
 	fi
 done
