@@ -1,6 +1,5 @@
 #!/bin/bash
 
-/root/create_brick.sh
 until [ -f /tmp/brick_done ];
         do
           sleep 3
