@@ -13,3 +13,4 @@ echo "UUID=$UUID /gfs xfs rw,inode64,noatime,nouuid 1 2" >> /etc/fstab
 mkdir /gfs
 mount /gfs
 mkdir /gfs/brick-1
+touch /tmp/brick_done
