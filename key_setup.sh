@@ -12,7 +12,7 @@ chown cloud_user:cloud_user /home/cloud_user/.ssh/id_rsa
 for host in {1..6}; do
 attempt=0
 while [ $attempt -le 10 ]; do
-ssh -o KbdInteractiveAuthentication=no -o BatchMode=yes setup@10.0.2.10${host} 2>&1 | grep server || test $? -eq 0 && break
+ssh -o KbdInteractiveAuthentication=no -o BatchMode=yes setup@10.0.2.10${host} 2>&1 | egrep 'server|client' || test $? -eq 0 && break
 sleep 6
 let attempt=attempt+1
 done
