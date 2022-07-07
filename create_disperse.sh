@@ -15,3 +15,5 @@ done
 
 #Enough attempts to validate brick, just create the volume win or lose.
 gluster volume create ganesha_vol server-1:/gfs/brick-1 server-2:/gfs/brick-1 server-3:/gfs/brick-1 server-4:/gfs/brick-1
+
+touch /tmp/disperse_done
