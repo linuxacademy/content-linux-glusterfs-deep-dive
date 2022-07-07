@@ -26,3 +26,4 @@ done
 else
 echo "nothing to do"
 fi
+touch /tmp/keys_done
