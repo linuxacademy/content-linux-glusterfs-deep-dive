@@ -10,7 +10,8 @@ DEBVER=$(grep 'VERSION=' /etc/os-release | grep -Eo '[a-z]+')
 DEBARCH=$(dpkg --print-architecture)
 
 #Create gluster source list for apt
-echo deb https://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/${DEBID}/${DEBARCH}/apt ${DEBVER} main > /etc/apt/sources.list.d/gluster.list
+#echo deb https://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/${DEBID}/${DEBARCH}/apt ${DEBVER} main > /etc/apt/sources.list.d/gluster.list
+echo deb echo deb https://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/${DEBID}/${DEBARCH}/apt ${DEBVER} main > /etc/apt/sources.list.d/gluster.list
 
 #Update apt and install glusterfs-server
 apt update
