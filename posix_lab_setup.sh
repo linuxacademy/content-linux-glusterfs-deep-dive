@@ -23,4 +23,10 @@ chown -R finance:sales /finance/sales_projects
 chmod -R 770 /finance/*
 chown finance:finance /finance
 
+echo "1 - Go Fast
+2 - Win" >> /finance/sales_projects/llama-racing/Secret-Racing-Strategy.txt
+
+chown finance:sales /finance/sales_projects/llama-racing/Secret-Racing-ad-campaign.txt
+chmod 666 /finance/sales_projects/llama-racing/Secret-Racing-ad-campaign.txt
+
 touch /tmp/posix_lab_done
