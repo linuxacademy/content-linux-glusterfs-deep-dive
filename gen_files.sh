@@ -19,7 +19,7 @@ nofiles=150 # number of files
 
 for i in `eval echo {1..$nofiles}`
 do
-    dd bs=1M count=$(($RANDOM%max + $min)) if=/dev/urandom of=/mnt/file-$i &
+    dd bs=1M count=$(($RANDOM%max + $min)) if=/dev/urandom of=/mnt/file-$i &>/dev/null & disown;
 done
 
 touch /tmp/files_done
