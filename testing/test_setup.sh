@@ -17,7 +17,7 @@ python3 -m easy_install --script-dir /opt/aws/bin aws-cfn-bootstrap-py3-latest.t
 for OPT in "$@"
 do
 	if [ "$OPT" == "linstor" ]; then
-	 wget -qO - https://github.com/linuxacademy/content-linux-glusterfs-deep-dive/raw/main/linstor_install.sh | bash
+	 wget -qO - https://raw.githubusercontent.com/linuxacademy/content-linux-glusterfs-deep-dive/main/testing/linstor_install.sh | bash
 	 	until [ -f /tmp/linstor_done ];
 			do
 			sleep 3
