@@ -8,11 +8,9 @@ apt-get update
 export DEBIAN_FRONTEND=noninteractive
 apt-get install -y drbd-dkms drbd-utils lvm2 linstor-satellite linstor-client
 if [ "$HOSTNAME" = server-1 ]; then
-	do
-		apt-get install -y linstor-controller
-	done
+	apt-get install -y linstor-controller
 else
-echo "Not server-1"
+	echo "Not server-1"
 fi
 
 #reload drbd module to make sure new version is used
