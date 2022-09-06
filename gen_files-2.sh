@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #wait for volume to be created
-until [ -f /tmp/disperse_done ] ;
+until [ -f /tmp/disp_rep_done ] ;
 do
 	sleep 5
 done
