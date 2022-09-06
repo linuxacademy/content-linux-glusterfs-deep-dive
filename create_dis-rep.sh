@@ -14,6 +14,6 @@ done
 done
 
 #Enough attempts to validate brick, just create the volume win or lose.
-gluster volume create gfs_vol replica 2 server-1:/gfs/brick-1 server-2:/gfs/brick-1 server-3:/gfs/brick-1 server-4:/gfs/brick-1 server-5:/gfs/brick-1 server-6:/gfs/brick-1
+echo y | gluster volume create gfs_vol replica 2 server-1:/gfs/brick-1 server-2:/gfs/brick-1 server-3:/gfs/brick-1 server-4:/gfs/brick-1 server-5:/gfs/brick-1 server-6:/gfs/brick-1
 
 touch /tmp/disp_rep_done
