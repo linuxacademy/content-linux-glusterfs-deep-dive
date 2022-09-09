@@ -8,6 +8,5 @@ SUBSYS=$(nvme list-subsys ${DEVICE} | grep pcie | awk '{print $4}' | cut -d . -f
 SLOT=$(grep "${SUBSYS}" /sys/bus/pci/slots/*/add* | cut -d : -f 1)
 
 #Fail the drive.
-echo echo "0 > /sys/bus/pci/slots/${SLOT}/power"
-#echo 0 > /sys/bus/pci/slots/${SLOT}/power
-
+LOCATION=$(echo $SLOT | cut -d / -f 6)
+echo 0 > /sys/bus/pci/slots/${LOCATION}/power
