@@ -8,3 +8,5 @@ die1=0
 let "die1 = $RANDOM % $hosts +1"
 let "result = $die1"
 ssh server-${result} /root/fail_brick.sh
+sleep 5
+touch /tmp/fail_done
