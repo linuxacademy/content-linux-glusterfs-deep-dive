@@ -11,3 +11,14 @@ do
 done
 
 touch /tmp/files_done
+
+status=5
+while [ $status -ne 1 ]
+ do
+   echo  -ne "\033[31;40mcreating files, please wait...\033[0m\r"
+   sleep 1
+   check=$(ps -ef | grep -i "[d]d bs=" )
+   status=$?
+done
+echo -ne "\n"
+echo -ne "\033[32;40mfiles created \033[0m\n"
