@@ -13,8 +13,8 @@ gluster volume start gfs_vol
 mount -t glusterfs server-1:/gfs_vol /mnt
 
 #generate a number of files with random sizes in a range
-min=15      # min size (MB)
-max=50     # max size (MB)
+min=15      # min size
+max=50     # max size
 nofiles=50 # number of files
 
 for i in `eval echo {1..$nofiles}`
