@@ -9,4 +9,7 @@ while [ $status -ne 0 ]
 	 status=$?
 done
 
+umount /mnt
+sleep 3
+
 ssh server-4 -q screen -d -m /root/crash.sh
