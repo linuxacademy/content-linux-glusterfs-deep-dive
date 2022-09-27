@@ -14,3 +14,4 @@ do
     dd bs=256 count=$(($RANDOM%max + $min)) if=/dev/urandom of=/mnt/file-$i &>/dev/null & disown;
 done
 
+touch /tmp/mount_gen_done
